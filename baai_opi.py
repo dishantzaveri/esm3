@@ -49,7 +49,7 @@ if not os.path.exists(filename):
     response = requests.get(url)
     with open(filename, "w", encoding="utf-8") as f:
         f.write(response.text)
-    print("✅ Downloaded CASPSimilarSeq_function_test.jsonl")
+    print(" Downloaded CASPSimilarSeq_function_test.jsonl")
 
 # Step 5: Parse JSONL and extract examples
 examples = []
@@ -62,7 +62,7 @@ with open(filename, "r") as f:
                 "output": inst["output"]
             })
 
-print(f"✅ Loaded {len(examples)} examples")
+print(f" Loaded {len(examples)} examples")
 
 # Step 6: Embed sequences with ESM
 def get_esm_embedding(sequence):
